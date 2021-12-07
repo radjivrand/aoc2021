@@ -114,39 +114,57 @@ error_reporting(E_ERROR | E_PARSE);
 // $result = $winningCard->getScore() * $leGame->lastNumber;
 
 //ex5
-require('/Users/arne/Sites/aoc2021/Ruler/Line.php');
-require('/Users/arne/Sites/aoc2021/Ruler/Grid.php');
+// require('/Users/arne/Sites/aoc2021/Ruler/Line.php');
+// require('/Users/arne/Sites/aoc2021/Ruler/Grid.php');
 
-$grid = new Grid();
+// $grid = new Grid();
 
-$demoInput = '0,9 -> 5,9
-8,0 -> 0,8
-9,4 -> 3,4
-2,2 -> 2,1
-7,0 -> 7,4
-6,4 -> 2,0
-0,9 -> 2,9
-3,4 -> 1,4
-0,0 -> 8,8
-5,5 -> 8,2';
+// $demoInput = '0,9 -> 5,9
+// 8,0 -> 0,8
+// 9,4 -> 3,4
+// 2,2 -> 2,1
+// 7,0 -> 7,4
+// 6,4 -> 2,0
+// 0,9 -> 2,9
+// 3,4 -> 1,4
+// 0,0 -> 8,8
+// 5,5 -> 8,2';
 
 // foreach (preg_split('/\n/', $demoInput) as $value) {
 //     $grid->addLine(new Line($value));
 // }
 
-$handle = file('/Users/arne/Sites/aoc2021/ex5_data.txt');
+// $handle = file('/Users/arne/Sites/aoc2021/ex5_data.txt');
 
-foreach ($handle as $value) {
-    $grid->addLine(new Line($value));
-}
+// foreach ($handle as $value) {
+//     $grid->addLine(new Line($value));
+// }
 
-$grid->drawLines();
-// print_R($grid->getPaperSize());
-// $grid->printPaper();
-//4204 too low
-//16602 too low
+// $grid->drawLines();
+// // print_R($grid->getPaperSize());
+// // $grid->printPaper();
+// //4204 too low
+// //16602 too low
 
-$result = $grid->getScore();
+// $result = $grid->getScore();
+
+// ex6
+// require('/Users/arne/Sites/aoc2021/Fish/Fish.php');
+
+// $demoInput = '3,4,3,1,2';
+
+// //siin jama, failist ei osatud lugeda korralikult. wut?
+// $handle = file_get_contents('/Users/arne/Sites/aoc2021/ex6_data.txt');
+
+// //uuesti
+// $handle = '1,1,1,1,3,1,4,1,4,1,1,2,5,2,5,1,1,1,4,3,1,4,1,1,1,1,1,1,1,2,1,2,4,1,1,1,1,1,1,1,3,1,1,5,1,1,2,1,5,1,1,1,1,1,1,1,1,4,3,1,1,1,2,1,1,5,2,1,1,1,1,4,5,1,1,2,4,1,1,1,5,1,1,1,1,5,1,3,1,1,4,2,1,5,1,2,1,1,1,1,1,3,3,1,5,1,1,1,1,3,1,1,1,4,1,1,1,4,1,4,3,1,1,1,4,1,2,1,1,1,2,1,1,1,1,5,1,1,3,5,1,1,5,2,1,1,1,1,1,4,4,1,1,2,1,1,1,4,1,1,1,1,5,3,1,1,1,5,1,1,1,4,1,4,1,1,1,5,1,1,3,2,2,1,1,1,4,1,3,1,1,1,2,1,3,1,1,1,1,4,1,1,1,1,2,1,4,1,1,1,1,1,4,1,1,2,4,2,1,2,3,1,3,1,1,2,1,1,1,3,1,1,3,1,1,4,1,3,1,1,2,1,1,1,4,1,1,3,1,1,5,1,1,3,1,1,1,1,5,1,1,1,1,1,2,3,4,1,1,1,1,1,2,1,1,1,1,1,1,1,3,2,2,1,3,5,1,1,4,4,1,3,4,1,2,4,1,1,3,1';
+
+// $fish = new Fish($handle);
+
+// $fish->ffwd(256);
+// $result = $fish->countFish();
+
+//ex7
 
 echo '##################' . PHP_EOL;
 echo '###  AoC 2021  ###' . PHP_EOL;

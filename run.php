@@ -117,6 +117,8 @@ error_reporting(E_ERROR | E_PARSE);
 require('/Users/arne/Sites/aoc2021/Ruler/Line.php');
 require('/Users/arne/Sites/aoc2021/Ruler/Grid.php');
 
+$grid = new Grid();
+
 $demoInput = '0,9 -> 5,9
 8,0 -> 0,8
 9,4 -> 3,4
@@ -128,25 +130,23 @@ $demoInput = '0,9 -> 5,9
 0,0 -> 8,8
 5,5 -> 8,2';
 
-$handle = file('/Users/arne/Sites/aoc2021/ex5_data.txt');
-
-$grid = new Grid();
-
 // foreach (preg_split('/\n/', $demoInput) as $value) {
 //     $grid->addLine(new Line($value));
 // }
+
+$handle = file('/Users/arne/Sites/aoc2021/ex5_data.txt');
 
 foreach ($handle as $value) {
     $grid->addLine(new Line($value));
 }
 
-// print_r($grid);
-
 $grid->drawLines();
 // print_R($grid->getPaperSize());
 // $grid->printPaper();
+//4204 too low
+//16602 too low
 
-// $result = $grid->getScore();
+$result = $grid->getScore();
 
 echo '##################' . PHP_EOL;
 echo '###  AoC 2021  ###' . PHP_EOL;

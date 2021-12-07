@@ -23,7 +23,7 @@ class Grid
         }
     }
 
-    public function drawLines()
+    public function drawLinesHorVer()
     {
         foreach ($this->lines as $line) {
             // print_r($line);
@@ -35,12 +35,13 @@ class Grid
                     }
                 } else {
                     print_r('2' . PHP_EOL);
-                    print_r($line);
+                    // print_r($line);
                     for ($j=$line->y2; $j <= $line->y1; $j++) { 
                         $this->paper[$line->x1][$j]++;
                     }
                 }
             } else {
+                print_r('hello?');
                 if ($line->x2 >= $line->x1) {
                     print_r('3' . PHP_EOL);
                     for ($k=$line->x1; $k <= $line->x2; $k++) { 
@@ -55,6 +56,35 @@ class Grid
             }
         }
     }
+
+    public function drawLines()
+    {
+        foreach ($this->lines as $line) {
+            $xValues = [];
+            $yValues = [];
+
+            if ($line->deltaX != 0) {
+                $xValues = range($line->x1, $line->x2);
+            }
+
+            if ($line->deltaY != 0) {
+                $yValues = range($line->y1, $line->y2);
+            }
+
+            if (empty($xValues)) {
+                $xValues = array_fill(0, count($yValues), $line->x1);
+            }
+
+            if (empty($yValues)) {
+                $yValues = array_fill(0, count($xValues), $line->y1);
+            }
+
+            foreach ($xValues as $key => $value) {
+                $this->paper[$xValues[$key]][$yValues[$key]]++;
+            }
+        }
+    }
+
 
     public function getPaperSize()
     {

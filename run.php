@@ -149,15 +149,12 @@ error_reporting(E_ERROR | E_PARSE);
 // $result = $grid->getScore();
 
 // ex6
-// require('/Users/arne/Sites/aoc2021/Fish/Fish.php');
+require('/Users/arne/Sites/aoc2021/Fish/Fish.php');
 
 // $demoInput = '3,4,3,1,2';
 
 // //siin jama, failist ei osatud lugeda korralikult. wut?
-// $handle = file_get_contents('/Users/arne/Sites/aoc2021/ex6_data.txt');
-
-// //uuesti
-// $handle = '1,1,1,1,3,1,4,1,4,1,1,2,5,2,5,1,1,1,4,3,1,4,1,1,1,1,1,1,1,2,1,2,4,1,1,1,1,1,1,1,3,1,1,5,1,1,2,1,5,1,1,1,1,1,1,1,1,4,3,1,1,1,2,1,1,5,2,1,1,1,1,4,5,1,1,2,4,1,1,1,5,1,1,1,1,5,1,3,1,1,4,2,1,5,1,2,1,1,1,1,1,3,3,1,5,1,1,1,1,3,1,1,1,4,1,1,1,4,1,4,3,1,1,1,4,1,2,1,1,1,2,1,1,1,1,5,1,1,3,5,1,1,5,2,1,1,1,1,1,4,4,1,1,2,1,1,1,4,1,1,1,1,5,3,1,1,1,5,1,1,1,4,1,4,1,1,1,5,1,1,3,2,2,1,1,1,4,1,3,1,1,1,2,1,3,1,1,1,1,4,1,1,1,1,2,1,4,1,1,1,1,1,4,1,1,2,4,2,1,2,3,1,3,1,1,2,1,1,1,3,1,1,3,1,1,4,1,3,1,1,2,1,1,1,4,1,1,3,1,1,5,1,1,3,1,1,1,1,5,1,1,1,1,1,2,3,4,1,1,1,1,1,2,1,1,1,1,1,1,1,3,2,2,1,3,5,1,1,4,4,1,3,4,1,2,4,1,1,3,1';
+// $handle = trim(file_get_contents('/Users/arne/Sites/aoc2021/ex6_data.txt'));
 
 // $fish = new Fish($handle);
 
@@ -165,6 +162,15 @@ error_reporting(E_ERROR | E_PARSE);
 // $result = $fish->countFish();
 
 //ex7
+require('/Users/arne/Sites/aoc2021/Crab/Crab.php');
+$demoInput = '16,1,2,0,4,2,7,1,2,14';
+$handle = trim(file_get_contents('/Users/arne/Sites/aoc2021/ex7_data.txt'));
+
+$cr = new Crab($handle);
+// print_r($cr);
+
+// $result = $cr->getFuelToPositionFactorial(2);
+$result = $cr->findLeastFuel();
 
 echo '##################' . PHP_EOL;
 echo '###  AoC 2021  ###' . PHP_EOL;

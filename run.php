@@ -1,7 +1,7 @@
 <?php
 namespace aoc2021;
 
-error_reporting(E_ERROR | E_WARNING | E_PARSE);
+error_reporting(E_ERROR | E_PARSE);
 
 // ex1
 // require_once('ex1_a.php');
@@ -113,15 +113,44 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 // $result = $winningCard->getScore() * $leGame->lastNumber;
 
-// ex5
+//ex5
+require('/Users/arne/Sites/aoc2021/Ruler/Line.php');
+require('/Users/arne/Sites/aoc2021/Ruler/Grid.php');
 
+$demoInput = '0,9 -> 5,9
+8,0 -> 0,8
+9,4 -> 3,4
+2,2 -> 2,1
+7,0 -> 7,4
+6,4 -> 2,0
+0,9 -> 2,9
+3,4 -> 1,4
+0,0 -> 8,8
+5,5 -> 8,2';
+
+$handle = file('/Users/arne/Sites/aoc2021/ex5_data.txt');
+
+$grid = new Grid();
+
+// foreach (preg_split('/\n/', $demoInput) as $value) {
+//     $grid->addLine(new Line($value));
+// }
+
+foreach ($handle as $value) {
+    $grid->addLine(new Line($value));
+}
+
+// print_r($grid);
+
+$grid->drawLines();
+// print_R($grid->getPaperSize());
+// $grid->printPaper();
+
+// $result = $grid->getScore();
 
 echo '##################' . PHP_EOL;
 echo '###  AoC 2021  ###' . PHP_EOL;
 echo '##################' . PHP_EOL;
-
-
-// print_r($input);
 
 print_r($result);
 

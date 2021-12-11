@@ -184,12 +184,14 @@ fgeab ca afcebg bdacfeg cfaedg gcfdb baec bfadeg bafgc acf | gebdcfa ecba ca fad
 dbcfg fgd bdegcaf fgec aegbdf ecdfab fbedc dacgb gdcebf gf | cefg dcbef fcge gbcadfe
 bdfegc cbegaf gecbf dfcage bdacg ed bedf ced adcbefg gebcd | ed bcgafe cdgba cbgef
 egadfb cdbfeg cegd fecab cgb gbdefca cg fgcdab egfdb bfceg | gbdfcae bgc cg cgb
-gcafb gcf dcaebfg ecagb gf abcdeg gaef cafbge fdbac fegbdc | fgae cfgab fg bagce';
+gcafb gcf dcaebfg ecagb gf abcdeg gaef cafbge fdbac fegbdc | fgae cfgab fg bagce
+';
 
 $handle = trim(file_get_contents('/Users/arne/Sites/aoc2021/ex8_data.txt'));
 
-$easy = new Simple($demoInput);
-print_r($easy);
+$easy = new Simple($handle);
+// print_r($easy);
+$result = $easy->addSegmentValues();
 
 // $result = $easy->countEasySegments();
 

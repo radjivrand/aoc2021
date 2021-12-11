@@ -35,12 +35,17 @@ class Simple
             $l = strlen($value);
             $counter += ($l == 2 || $l == 3 || $l == 4 || $l == 7) ? 1 : 0;
         }
-        print_r($segment);
-        print_r(PHP_EOL);
-        print_r($counter);
-        print_r(PHP_EOL);
 
         return $counter;
     }
 
+    public function addSegmentValues()
+    {
+        $sum = 0;
+        foreach ($this->variants as $variant) {
+            $sum += (int)$variant->decodedValue;
+        }
+
+        return $sum;
+    }
 }

@@ -173,27 +173,47 @@ require('/Users/arne/Sites/aoc2021/Fish/Fish.php');
 // $result = $cr->findLeastFuel();
 
 //ex8
-require('/Users/arne/Sites/aoc2021/Display/Simple.php');
-require('/Users/arne/Sites/aoc2021/Display/Combination.php');
-$demoInput = 'be cfbegad cbdgef fgaecd cgeb fdcge agebfd fecdb fabcd edb | fdgacbe cefdb cefbgd gcbe
-edbfga begcd cbg gc gcadebf fbgde acbgfd abcde gfcbed gfec | fcgedb cgb dgebacf gc
-fgaebd cg bdaec gdafb agbcfd gdcbef bgcad gfac gcb cdgabef | cg cg fdcagb cbg
-fbegcd cbd adcefb dageb afcb bc aefdc ecdab fgdeca fcdbega | efabcd cedba gadfec cb
-aecbfdg fbg gf bafeg dbefa fcge gcbea fcaegb dgceab fcbdga | gecf egdcabf bgf bfgea
-fgeab ca afcebg bdacfeg cfaedg gcfdb baec bfadeg bafgc acf | gebdcfa ecba ca fadegcb
-dbcfg fgd bdegcaf fgec aegbdf ecdfab fbedc dacgb gdcebf gf | cefg dcbef fcge gbcadfe
-bdfegc cbegaf gecbf dfcage bdacg ed bedf ced adcbefg gebcd | ed bcgafe cdgba cbgef
-egadfb cdbfeg cegd fecab cgb gbdefca cg fgcdab egfdb bfceg | gbdfcae bgc cg cgb
-gcafb gcf dcaebfg ecagb gf abcdeg gaef cafbge fdbac fegbdc | fgae cfgab fg bagce
-';
+// require('/Users/arne/Sites/aoc2021/Display/Simple.php');
+// require('/Users/arne/Sites/aoc2021/Display/Combination.php');
+// $demoInput = 'be cfbegad cbdgef fgaecd cgeb fdcge agebfd fecdb fabcd edb | fdgacbe cefdb cefbgd gcbe
+// edbfga begcd cbg gc gcadebf fbgde acbgfd abcde gfcbed gfec | fcgedb cgb dgebacf gc
+// fgaebd cg bdaec gdafb agbcfd gdcbef bgcad gfac gcb cdgabef | cg cg fdcagb cbg
+// fbegcd cbd adcefb dageb afcb bc aefdc ecdab fgdeca fcdbega | efabcd cedba gadfec cb
+// aecbfdg fbg gf bafeg dbefa fcge gcbea fcaegb dgceab fcbdga | gecf egdcabf bgf bfgea
+// fgeab ca afcebg bdacfeg cfaedg gcfdb baec bfadeg bafgc acf | gebdcfa ecba ca fadegcb
+// dbcfg fgd bdegcaf fgec aegbdf ecdfab fbedc dacgb gdcebf gf | cefg dcbef fcge gbcadfe
+// bdfegc cbegaf gecbf dfcage bdacg ed bedf ced adcbefg gebcd | ed bcgafe cdgba cbgef
+// egadfb cdbfeg cegd fecab cgb gbdefca cg fgcdab egfdb bfceg | gbdfcae bgc cg cgb
+// gcafb gcf dcaebfg ecagb gf abcdeg gaef cafbge fdbac fegbdc | fgae cfgab fg bagce
+// ';
 
-$handle = trim(file_get_contents('/Users/arne/Sites/aoc2021/ex8_data.txt'));
+// $handle = trim(file_get_contents('/Users/arne/Sites/aoc2021/ex8_data.txt'));
 
-$easy = new Simple($handle);
-// print_r($easy);
-$result = $easy->addSegmentValues();
-
+// $easy = new Simple($handle);
 // $result = $easy->countEasySegments();
+// // print_r($easy);
+// $result = $easy->addSegmentValues();
+
+//ex9
+require('/Users/arne/Sites/aoc2021/Smoke/Map.php');
+require('/Users/arne/Sites/aoc2021/Smoke/Point.php');
+$demoInput = '2199943210
+3987894921
+9856789892
+8767896789
+9899965678';
+
+$handle = trim(file_get_contents('/Users/arne/Sites/aoc2021/ex9_data.txt'));
+
+$treasure = new Map($handle);
+// print_r($treasure->findAdjacentSquareValues(50,50));
+// $result = $treasure->findLowPoints();
+// $result = $treasure->checker();
+// $treasure->prLow();
+// $treasure->prX();
+$result = $treasure->getScore();
+
+// print_r($treasure->move(0,-1));
 
 echo '##################' . PHP_EOL;
 echo '###  AoC 2021  ###' . PHP_EOL;

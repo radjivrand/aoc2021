@@ -195,25 +195,42 @@ require('/Users/arne/Sites/aoc2021/Fish/Fish.php');
 // $result = $easy->addSegmentValues();
 
 //ex9
-require('/Users/arne/Sites/aoc2021/Smoke/Map.php');
-require('/Users/arne/Sites/aoc2021/Smoke/Point.php');
-$demoInput = '2199943210
-3987894921
-9856789892
-8767896789
-9899965678';
+// require('/Users/arne/Sites/aoc2021/Smoke/Map.php');
+// require('/Users/arne/Sites/aoc2021/Smoke/Point.php');
+// $demoInput = '2199943210
+// 3987894921
+// 9856789892
+// 8767896789
+// 9899965678';
 
-$handle = trim(file_get_contents('/Users/arne/Sites/aoc2021/ex9_data.txt'));
+// $handle = trim(file_get_contents('/Users/arne/Sites/aoc2021/ex9_data.txt'));
 
-$treasure = new Map($handle);
-// print_r($treasure->findAdjacentSquareValues(50,50));
-// $result = $treasure->findLowPoints();
-// $result = $treasure->checker();
-// $treasure->prLow();
-// $treasure->prX();
-$result = $treasure->getScore();
+// $treasure = new Map($handle);
+// // print_r($treasure->findAdjacentSquareValues(50,50));
+// // $result = $treasure->findLowPoints();
+// // $result = $treasure->checker();
+// // $treasure->prLow();
+// // $treasure->prX();
+// $result = $treasure->getScore();
 
-// print_r($treasure->move(0,-1));
+// ex10
+require('/Users/arne/Sites/aoc2021/Syntax/Verify.php');
+$demoInput = '[({(<(())[]>[[{[]{<()<>>
+[(()[<>])]({[<{<<[]>>(
+{([(<{}[<>[]}>{[]{[(<()>
+(((({<>}<{<{<>}{[]{[]{}
+[[<[([]))<([[{}[[()]]]
+[{[{({}]{}}([{[{{{}}([]
+{<[[]]>}<{[{[{[]{()[[[]
+[<(<(<(<{}))><([]([]()
+<{([([[(<>()){}]>(<<{{
+<{([{{}}[<[[[<>{}]]]>[]]';
+$handle = trim(file_get_contents('/Users/arne/Sites/aoc2021/ex10_data.txt'));
+
+$checker = new Verify($handle);
+$resultstring = $checker->processRows();
+// print_r('res: '. $resultstring . PHP_EOL);
+$result = $checker->getScore($resultstring);
 
 echo '##################' . PHP_EOL;
 echo '###  AoC 2021  ###' . PHP_EOL;

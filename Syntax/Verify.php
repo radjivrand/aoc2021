@@ -5,12 +5,22 @@ namespace aoc2021;
 class Verify
 {
     public $code;
+
+    public $halves;
     const REWARD = [
         ')' => 3,
         ']' => 57,
         '}' => 1197,
         '>' => 25137,
     ];
+
+    const MIDDLE = [
+        '(' => 1,
+        '[' => 2,
+        '{' => 3,
+        '<' => 4,
+    ];
+
 
     function __construct($input)
     {
@@ -63,7 +73,7 @@ class Verify
 
         $chars = '';
 
-        foreach ($new as $row) {
+        foreach ($new as &$row) {
             foreach ($row as $key => $value) {
                 switch ($value) {
                     case '>':
@@ -71,21 +81,21 @@ class Verify
                     case '}':
                     case ']':
                         $chars .= $value;
+                        $row['marker'] = 1;
                         break 2;
                     
                     default:
                         break;
                 }
             }
+
+            if ($row['marker'] != 1) {
+                unset($row['marker']);
+                $this->halves[] = $row;
+            }
         }
 
-        // selgita välja, mllistes ei ole valeisd väärtuseid
-        // lase need tagurpidi käima
-        // leia vastav skoor
-
-        // print_r($new);
         return $chars;
-
     }
 
     public function getScore($string)
@@ -96,6 +106,27 @@ class Verify
         }
 
         return $res;
+    }
+
+    public function getSecondScore()
+    {
+        print_r('äheelel');
+        $scores = [];
+        foreach ($this->halves as $row) {
+            $current = 0;
+            krsort($row);
+            foreach ($row as $value) {
+                $current *= 5;
+                $current += self::MIDDLE[$value];
+            }
+            $scores[] = $current;
+        }
+
+        sort($scores);
+        $len = count($scores);
+        $pos = ($len - 1) / 2;
+
+        return $scores[$pos];
     }
 
 

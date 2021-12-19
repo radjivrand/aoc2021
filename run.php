@@ -2,7 +2,6 @@
 namespace aoc2021;
 
 error_reporting(E_ERROR | E_PARSE | E_NOTICE);
-
 // ex1
 // require_once('ex1_a.php');
 // $demoInput = [199, 200, 208, 210, 200, 207, 240, 269, 260, 263];
@@ -235,67 +234,82 @@ require('/Users/arne/Sites/aoc2021/Fish/Fish.php');
 // // print_r($checker);
 
 // ex11
-// require('/Users/arne/Sites/aoc2021/Octo/Jumbo.php');
-// $demoInput = '5483143223
-// 2745854711
-// 5264556173
-// 6141336146
-// 6357385478
-// 4167524645
-// 2176841721
-// 6882881134
-// 4846848554
-// 5283751526';
+require('/Users/arne/Sites/aoc2021/Octo/Dumbo.php');
+$demoInput = '5483143223
+2745854711
+5264556173
+6141336146
+6357385478
+4167524645
+2176841721
+6882881134
+4846848554
+5283751526';
 
-// $demoInput2 = '6594254334
-// 3856965822
-// 6375667284
-// 7252447257
-// 7468496589
-// 5278635756
-// 3287952832
-// 7993992245
-// 5957959665
-// 6394862637';
-
-// // $handle = trim(file_get_contents('/Users/arne/Sites/aoc2021/ex10_data.txt'));
+$handle = trim(file_get_contents('/Users/arne/Sites/aoc2021/ex11_data.txt'));
 
 
-// $swimmer = new Jumbo($demoInput2);
+$swimmer = new Dumbo($handle);
 
 // ex 13
-require('/Users/arne/Sites/aoc2021/Paper/Stahl.php');
-$handle = trim(file_get_contents('/Users/arne/Sites/aoc2021/ex13_data.txt'));
+// require('/Users/arne/Sites/aoc2021/Paper/Stahl.php');
+// $handle = trim(file_get_contents('/Users/arne/Sites/aoc2021/ex13_data.txt'));
 
-$demoInput = '6,10
-0,14
-9,10
-0,3
-10,4
-4,11
-6,0
-6,12
-4,1
-0,13
-10,12
-3,4
-3,0
-8,4
-1,10
-2,14
-8,10
-9,0
+// $demoInput = '6,10
+// 0,14
+// 9,10
+// 0,3
+// 10,4
+// 4,11
+// 6,0
+// 6,12
+// 4,1
+// 0,13
+// 10,12
+// 3,4
+// 3,0
+// 8,4
+// 1,10
+// 2,14
+// 8,10
+// 9,0
 
-fold along y=7
-fold along x=5
-';
+// fold along y=7
+// fold along x=5
+// ';
 
 // $lak = new Stahl($demoInput);
-$lak = new Stahl($handle);
+// $lak = new Stahl($handle);
 //903 too high
 // 618, Curiously, it's the right answer for someone else; you might be logged in to the wrong account or just unlucky
 // HZLEHJPK, wrong
 // HZLEHJRK
+
+// ex14
+// $demoInput = 'NN
+
+// CH -> B
+// HH -> N
+// CB -> H
+// NH -> C
+// HB -> C
+// HC -> B
+// HN -> C
+// NN -> C
+// BH -> H
+// NC -> B
+// NB -> B
+// BN -> B
+// BB -> N
+// BC -> B
+// CC -> N
+// CN -> C
+// ';
+// $handle = trim(file_get_contents('/Users/arne/Sites/aoc2021/ex14_data.txt'));
+// require('/Users/arne/Sites/aoc2021/Rubber/Gum.php');
+
+// $g = new Gum($handle);
+
 
 echo '##################' . PHP_EOL;
 echo '###  AoC 2021  ###' . PHP_EOL;

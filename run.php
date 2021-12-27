@@ -1,7 +1,21 @@
-<?php
-namespace aoc2021;
+ <?php
+// namespace aoc2021;
 
-error_reporting(E_ERROR | E_PARSE | E_NOTICE);
+// use aoc2021\Rubber\Node;
+
+spl_autoload_register(function ($className) {
+    // var_dump($className);
+    require '/Users/arne/Sites/' . str_replace('\\', '/', $className) . '.php';
+});
+
+use aoc2021\Rubber\Gum as Gum;
+use aoc2021\Rubber\Node as Node;
+use aoc2021\Rubber\Legs as Legs;
+use aoc2021\Crups\Dice as Dice;
+use aoc2021\Crups\Player as Player;
+
+
+error_reporting(E_ERROR | E_PARSE);
 // ex1
 // require_once('ex1_a.php');
 // $demoInput = [199, 200, 208, 210, 200, 207, 240, 269, 260, 263];
@@ -148,7 +162,7 @@ error_reporting(E_ERROR | E_PARSE | E_NOTICE);
 // $result = $grid->getScore();
 
 // ex6
-require('/Users/arne/Sites/aoc2021/Fish/Fish.php');
+// require('/Users/arne/Sites/aoc2021/Fish/Fish.php');
 
 // $demoInput = '3,4,3,1,2';
 
@@ -234,22 +248,22 @@ require('/Users/arne/Sites/aoc2021/Fish/Fish.php');
 // // print_r($checker);
 
 // ex11
-require('/Users/arne/Sites/aoc2021/Octo/Dumbo.php');
-$demoInput = '5483143223
-2745854711
-5264556173
-6141336146
-6357385478
-4167524645
-2176841721
-6882881134
-4846848554
-5283751526';
+// require('/Users/arne/Sites/aoc2021/Octo/Dumbo.php');
+// $demoInput = '5483143223
+// 2745854711
+// 5264556173
+// 6141336146
+// 6357385478
+// 4167524645
+// 2176841721
+// 6882881134
+// 4846848554
+// 5283751526';
 
-$handle = trim(file_get_contents('/Users/arne/Sites/aoc2021/ex11_data.txt'));
+// $handle = trim(file_get_contents('/Users/arne/Sites/aoc2021/ex11_data.txt'));
 
 
-$swimmer = new Dumbo($handle);
+// $swimmer = new Dumbo($handle);
 
 // ex 13
 // require('/Users/arne/Sites/aoc2021/Paper/Stahl.php');
@@ -286,29 +300,67 @@ $swimmer = new Dumbo($handle);
 // HZLEHJRK
 
 // ex14
-// $demoInput = 'NN
+$demoInput = 'NNCB
 
-// CH -> B
-// HH -> N
-// CB -> H
-// NH -> C
-// HB -> C
-// HC -> B
-// HN -> C
-// NN -> C
-// BH -> H
-// NC -> B
-// NB -> B
-// BN -> B
-// BB -> N
-// BC -> B
-// CC -> N
-// CN -> C
-// ';
+CH -> B
+HH -> N
+CB -> H
+NH -> C
+HB -> C
+HC -> B
+HN -> C
+NN -> C
+BH -> H
+NC -> B
+NB -> B
+BN -> B
+BB -> N
+BC -> B
+CC -> N
+CN -> C
+';
 // $handle = trim(file_get_contents('/Users/arne/Sites/aoc2021/ex14_data.txt'));
-// require('/Users/arne/Sites/aoc2021/Rubber/Gum.php');
 
-// $g = new Gum($handle);
+// $g = new Gum($demoInput);
+
+$aN = new Node('a');
+$bN = new Node('b');
+$cN = new Node('c');
+$dN = new Node('d');
+$eN = new Node('e');
+$fN = new Node('f');
+
+$aN->left = $bN;
+$aN->right = $cN;
+$bN->left = $dN;
+$bN->right = $eN;
+$cN->right = $fN;
+
+// print_r($aN->printDepthFirst($aN));
+// print_r($aN);
+
+$l = new Legs();
+
+// ex21
+
+// $handle = trim(file_get_contents('/Users/arne/Sites/aoc2021/ex14_data.txt'));
+// $d = new Dice();
+
+// $p1 = new Player(3);
+// $p2 = new Player(5);
+
+// while ($p1->score < 1000 && $p2->score < 1000) {
+//     $p1->getScore($d->rollTheDice());
+//     if ($p1->score >= 1000) {
+//         break;
+//     }
+//     $p2->getScore($d->rollTheDice());
+// }
+
+// $losingScore = $p1->score > $p2->score ? $p2->score : $p1->score;
+
+// print_R($losingScore * $d::$rollCount . PHP_EOL);
+
 
 
 echo '##################' . PHP_EOL;
